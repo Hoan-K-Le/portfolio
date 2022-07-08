@@ -5,6 +5,8 @@ export default function About() {
   return (
     <div>
       <h1>About Page!</h1>
+      {/* testing linter on deploy */}
+      <h2>{`Chuck's About Page`}</h2>
 
       <p className={[styles.extraGreen, styles.bigFont].join(' ')}>
         I am Chucky. You make bad portfolio i KEEEL THIS KITTY!

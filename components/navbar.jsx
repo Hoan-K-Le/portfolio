@@ -86,7 +86,7 @@ export default function Navbar() {
             </div>
             <div className="border-b border-gray-300 my-4">
               <p className="w-[85%] md:w-[90%] py-4">
-                Building Hoan's Portfolio to get a juuuurb
+                Building Hoan&apos;s Portfolio to get a juuuurb
               </p>
             </div>
             {/* closing out the menu */}

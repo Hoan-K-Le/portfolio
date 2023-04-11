@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif
+    /* font-family: 'Roboto', sans-serif */
 }
 
 
@@ -47,55 +47,67 @@ header .profile h1 {
     font-weight: 600;
 }
 
-header .profile .social-icons a{
+header .profile .social-icons img{
     display: inline-block;
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     text-align: center;
     line-height: 37px;
-    background-color: var(--iconBGColor);
+    /* background-color: var(--iconBGColor); */
+    background: white;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     margin: 1.5px;
     transition: 0.4s;
+    
 }
 
-header .profile .social-icons a:hover {
+header .profile .social-icons img:hover {
     background-color: var(--themeColor)
 }
 
 /* Navbar */
 header nav {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 header nav ul li {
     list-style: none;
 }
-header nav ul li a {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 10px;
-    color: lightgray;
-    margin: 7px 0;
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 0.6px;;
+    header nav ul li a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        color: white;
+        margin: 20px 0;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 0.6px;;
 
+    }
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-header nav ul li a i {
+header nav ul li a  {
     margin-right: 10px;
     font-size: 20px;
     transition: 0.4s;
 }
 
-header nav ul li a:hover i {
-    color: var(--themeColor)
+header nav ul li a:hover  {
+    padding: 20px 40px;
+    background: var(--themeColor);
+    border-radius: 10px;
+    transition: 0.5s ease;
 }
 
 .header nav ul li .active {
-    color: var(--themeColor);
+    background: var(--themeColor);
 }
 
 
@@ -147,6 +159,7 @@ header .footer p a {
         display: block;
     }
 }
+
 
 .mobile-nav-active header {
     left: 0;

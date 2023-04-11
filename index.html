@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css"/>
     <title>Hoan's Portfolio</title>
 </head>
@@ -15,19 +17,19 @@
             <img src="https://placeholder.com/200x200" alt="" width="150px"/>
             <h1>Hoan Le</h1>
             <div class="social-icons">
-                <a href="#"><i class='fa-brands fa-github'></i></a>
-                <a href="#"><i class='fa-brands fa-linkedin'></i></a>
+                <a href="#"><img src='images/github.png'/></a>
+                <a href="#"><img src='images/linkedin.png'/></a>
             </div>
         </div>
 
         <!-- NavBar -->
         <nav>
-            <ul>
-                <li><a href="#" class="active"><i class="fa-solid fa-house"></i>Home</a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i>About Me</a></li>
-                <li><a href="#"><i class="fa-solid fa-briefcase"></i>Portfolio</a></li>
-                <li><a href="#"><i class="fa-solid fa-server"></i>Services</a></li>
-                <li><a href="#"><i class="fa-solid fa-envelope"></i>Contact</a></li>
+            <ul class="lists">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
 
@@ -37,12 +39,15 @@
             <p>&copy; Copyright 2023 <br>Designed by <a href='#' target="_blank">Hoan Le</a></p>
         </div>
     </header>
-
+    
+    
     <!-- Mobile nav -->
-    <i class="fa-solid fa-bars" id="menuBtn"></i>
+    
+    <i class="fa-solid fa-bars"id="menuBtn"></i>
     <!-- HEADER END -->
     
-    <script src='script.js'></script>
-   <script src="https://kit.fontawesome.com/aa5f332820.js" crossorigin="anonymous"></script>
+    
+    <script defer src='script.js'></script>
+    <script src="https://kit.fontawesome.com/7b5e8e8955.js" crossorigin="anonymous"></script>
 </body>
 </html>

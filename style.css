@@ -4,20 +4,86 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: 'Roboto', sans-serif */
+    
 }
 
+/* 
+#393ee46; dark grayish bgcolor
+bodyColor: #222831
+*/
 
-/* Global Variables */
+/* ============================ */
+/* GLOBAL VARIABLES */
+/* ============================ */
+
 :root {
     --sideBGColor: #040b14;
     --themeColor: #00A78E;
     --iconBGColor: #2C2f3F;
     --textColor: #525252;
     --bgColor: #f7f7f7;
+    --shadowColor: #058a76;
+    --bodyColor: #222831;
 }
 
-/* HEADER CSS  */
+
+/* CUSTOM SCROLLBAR */
+body::-webkit-scrollbar {
+    width: 0.6em;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 60px var(--bgColor)
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--themeColor);
+}
+
+.globalBtn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--themeColor);
+    padding: 12px 15px 9px 15px;
+    color: var(--bgColor);
+    font-size: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 20px var(--shadowColor);
+    margin-top: 55px;
+    z-index: 21;
+}
+
+.globalBtn:hover {
+    background-color: transparent;
+    transform: translateY(-5px)
+}
+
+.center {
+    text-align: center
+}
+
+.padding {
+    padding: 120px 6%;
+}
+
+.border {
+    position: relative;
+}
+
+.border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 20%;
+    height: 2px;
+    background-color: var(--bgColor);
+    border-radius: 2px;
+}
+
+
+/* ============================ */
+/* NAVBAR */
+/* ============================ */
 header {
     height: 100vh;
     position: fixed;
@@ -34,14 +100,43 @@ header {
 header .profile {
     text-align: center;
     margin: 10px 0;
+    
 }
 
-header .profile img {
+header .profile .img-social {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 10px solid var(--iconBGColor)
+    border: 10px solid var(--iconBGColor);
 }
+
+
+
+.profile-pic-div::before {
+    content: '';
+    background-image: conic-gradient(var(--themeColor) 20deg, transparent 120deg);
+    width: 155px;
+    height: 155px;
+    top: 2.1%;
+    left: 24.6%;
+    position: absolute;
+    /* background: green; */
+    border-radius: 50%;
+    /* z-index: -1 */
+    animation: rotate 5s linear infinite;
+}
+
+
+
+
+
+.profile-pic {
+    position: relative;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+}
+
 
 header .profile h1 {
     color: #fff;
@@ -67,7 +162,6 @@ header .profile .social-icons img:hover {
     background-color: var(--themeColor)
 }
 
-/* Navbar */
 header nav {
     margin-top: 20px;
 }
@@ -100,10 +194,11 @@ header nav ul li a  {
 }
 
 header nav ul li a:hover  {
-    padding: 20px 40px;
-    background: var(--themeColor);
-    border-radius: 10px;
-    transition: 0.5s ease;
+    padding: 10px 10px;
+    /* background: var(--themeColor); */
+    border-bottom: 1px solid var(--themeColor);
+    /* border-radius: 10px; */
+    transition: 0.3s ease-in;
 }
 
 .header nav ul li .active {
@@ -148,17 +243,6 @@ header .footer p a {
     z-index: 999;
 }
 
-@media only screen and (max-width: 1050px) {
-    header {
-        left: -300px;
-    }
-    header .footer {
-        left: -300px;
-    }
-    #menuBtn {
-        display: block;
-    }
-}
 
 
 .mobile-nav-active header {
@@ -179,13 +263,11 @@ main {
     transition: 0.3s;
 }
 
-@media only screen and (max-width: 1050px) {
-    main {
-        margin-left: 0;
-    }
-}
 
-/* ------------Home Section------------- */
+
+/* ============================ */
+/* HOME */
+/* ============================ */
 #home {
     height: 100vh;
     width: 100%;
@@ -234,13 +316,13 @@ main {
 #home .home-row p {
     color: whitesmoke;
     text-align: center;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 500;
     margin-top: 30px;
 }
 
 #home .home-row p span {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     border-bottom: 4px solid var(--themeColor)
 }
 
@@ -261,5 +343,139 @@ main {
         color: whitesmoke;
         font-size: 30px;
         font-weight: 500;
+    }
+}
+
+/* ============================ */
+/* ABOUT ME */
+/* ============================ */
+#about {
+    width: 100%;
+    /* background-color: var(--bodyColor); */
+    background-color: #222831;
+    position: relative;
+    transition: all 0.4s ease-in;
+    
+}
+
+
+#about .col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    /* background-color: var(--bodyColor); */
+    background-color: var(--bodyColor);
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.85);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.heading {
+    color: var(--themeColor);
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 5px;;
+}
+
+.sub-para {
+    color: #fff;
+    margin-bottom: 10px;;
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+/* bubble/circle animation */
+#about::before {
+    content: '';
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    width: 120px;
+    height: 120px;
+    border: 10px solid var(--themeColor);
+    border-radius: 50%;
+    background-color: var(--shadowColor);
+    animation: CircleMove 5s infinite;
+}
+
+.divider li {
+    width: 32%;
+    height: 2px;
+    background-color: var(--themeColor);
+    list-style: none;
+    margin-bottom: 20px;;
+}
+
+.btns {
+    margin-top: 20px;;
+}
+
+.btns a {
+    margin: 0 10px;
+    width: 150px;
+}
+
+
+/* ============================ */
+/* ANIMATION/ KEYFRAMES */
+/* ============================ */
+@keyframes rotate {
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+
+@keyframes CircleMove {
+    0% { 
+        /* transform: translateX(-10%); */
+        right: 2%
+    }
+    50% {
+        /* transform: translateX(-100%); */
+        right: 30%;
+    }
+    100% {
+        /* transform: translateX(-10%); */
+        right: 2%;
+    }
+}
+
+/* making image bounce up and down */
+/* 
+@keyframes imgMove {
+    0% {
+        transform: translateY(0%)
+    }
+    50% {
+        transform: translateY(-10%)
+    }
+    100% {
+        transform: translateY(0%)
+    }
+} */
+
+/* ============================ */
+/* MEDIA QUERIES */
+/* ============================ */
+
+@media only screen and (max-width: 1050px) {
+    header {
+        left: -300px;
+    }
+    header .footer {
+        left: -300px;
+    }
+    #menuBtn {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    main {
+        margin-left: 0;
     }
 }

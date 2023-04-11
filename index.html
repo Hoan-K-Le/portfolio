@@ -14,15 +14,18 @@
     <!-- HEADER START -->
     <header>
         <div class="profile">
-            <img src="./images/profilepic.jpg" alt="profile-pic" width="150px"/>
+            <div class="profile-pic-div">
+
+                <img class="profile-pic" src="./images/profilepic.jpg" alt="profile-pic" width="150px"/>
+            </div>
             <h1>Hoan Le</h1>
             <div class="social-icons">
-                <a href="https://github.com/hoan-k-le" target="_blank"><img src='images/github.png'/></a>
-                <a href="https://linkedin.com/in/hoan-k-le" target="_blank"><img src='images/linkedin.png'/></a>
+                <a href="https://github.com/hoan-k-le" target="_blank"><img class="img-social" src='images/github.png'/></a>
+                <a href="https://linkedin.com/in/hoan-k-le" target="_blank"><img class="img-social" src='images/linkedin.png'/></a>
             </div>
         </div>
 
-        <!-- NavBar -->
+        <!-- NAVBAR STARTS -->
         <nav>
             <ul class="lists">
                 <li><a href="#" class="active">Home</a></li>
@@ -32,31 +35,46 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-
-        <!-- Footer -->
+        <!-- FOOTER ON NAVBAR -->
         <div class="footer">
-            <!-- link your website -->
-            <p>&copy; Copyright 2023 <br>Made with <i class="fa fa-heart"></i> by <a href='#' target="_blank">Hoan Le</a></p>
+            <!-- COPYRIGHT AND LINK TO LINKEDIN  -->
+            <p>&copy; Copyright 2023 <br>Made with <i class="fa fa-heart"></i> by <a href='https://linkedin.com/in/hoan-k-le' target="_blank">Hoan Le</a></p>
         </div>
     </header>
-    
-    
-    <!-- Mobile nav -->
-    
+    <!--MOBILE NAV FOR MOBILE USERS -->
     <i class="fa-solid fa-bars"id="menuBtn"></i>
     <!-- HEADER END -->
     
+
+
     <!-- Body Content -->
+    <!-- HOME SECTION STARTS -->
     <main>
-        <!-- Home section -->
         <section id="home">
             <div class="home-row">
-                <h1>Hi, This is Hoan Le<span>.</span></h1>
-                <p>I'm a <span class='auto-input'></span></p>
+                <h1 class="center">Hi, This is Hoan Le<span>.</span></h1>
+                <p class="center">I'm a(n) <span class='auto-input'></span></p>
             </div>
+            <a href="#" class="globalBtn">Download CV</a>
         </section>
-        <!-- Home section ends -->
     </main>
+    <!-- HOME SECTION ENDS -->
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="padding border">
+        <div class="col">
+            <h2 class="heading">About Me</h2>
+            <div class="divider"><li></li></div>
+            <p class="sub-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est praesentium corrupti illo facere numquam nostrum amet aspernatur temporibus. At, repellendus.</p>
+            <p class="sub-para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, voluptatum.</p>
+            <div class="btns center">
+                <a href="#" class="globalBtn">Hire Me</a>
+                <a href="#" class="globalBtn">My Skills</a>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT SECTION ENDS -->
     <!-- typedjs autotype -->
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <script defer src='script.js'></script>

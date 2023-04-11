@@ -351,7 +351,6 @@ main {
 /* ============================ */
 #about {
     width: 100%;
-    /* background-color: var(--bodyColor); */
     background-color: #222831;
     position: relative;
     transition: all 0.4s ease-in;
@@ -363,9 +362,8 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
-    /* background-color: var(--bodyColor); */
     background-color: var(--bodyColor);
     box-shadow: 10px 10px 30px rgba(0,0,0,0.85);
     padding: 40px;
@@ -373,6 +371,7 @@ main {
 }
 
 .heading {
+   
     color: var(--themeColor);
     font-weight: 700;
     font-size: 50px;
@@ -393,7 +392,7 @@ main {
     content: '';
     position: absolute;
     right: 2%;
-    top: 5%;
+    top: 0%;
     width: 120px;
     height: 120px;
     border: 10px solid var(--themeColor);
@@ -403,6 +402,7 @@ main {
 }
 
 .divider li {
+   
     width: 32%;
     height: 2px;
     background-color: var(--themeColor);
@@ -417,6 +417,23 @@ main {
 .btns a {
     margin: 0 10px;
     width: 150px;
+}
+
+.about__img {
+    position: absolute;
+    top: -20%;
+    left: -15%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--iconBGColor);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.about__img > img {
+    width: 100%;
 }
 
 
@@ -462,7 +479,7 @@ main {
 /* MEDIA QUERIES */
 /* ============================ */
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1080px) {
     header {
         left: -300px;
     }
@@ -472,10 +489,46 @@ main {
     #menuBtn {
         display: block;
     }
-}
-
-@media only screen and (max-width: 1050px) {
     main {
         margin-left: 0;
     }
 }
+
+@media only screen and (max-width: 730px) {
+    .about__img {
+       left: 45%;
+      
+    }
+
+    .col {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 485px) {
+    .btns a {
+        margin: 10px 0;
+        width: 100%;
+    }
+    .about__img {
+        position: absolute;
+        top: -27%;
+        left: 35%;
+       
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .about__img {
+        top: -15%;
+        left: 65%
+    }
+
+    .col {
+        width: 100%;;
+    }
+    #about::before {
+        display: none;
+    }
+}
+

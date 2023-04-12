@@ -6,6 +6,10 @@
     box-sizing: border-box;
     
 }
+html {
+
+    scroll-behavior: smooth
+}
 
 /* 
 #393ee46; dark grayish bgcolor
@@ -528,9 +532,104 @@ main {
 }
 
 
+/* ============================ */
+/* PROJECTS */
+/* ============================ */
+#projects {
+    background: var(--bodyColor);
+    z-index: 98;
+}
 
 
+.project-row {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    max-width: 1000px;
 
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    border-top: 5px solid var(--themeColor);
+    
+}
+
+
+.img-box {
+    position: relative;
+    background-color: var(--bodyColor);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    margin-top: 38px;
+}
+
+.img-box::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 48%;
+    height: 50px;
+    width: 5px;
+    background: var(--themeColor);
+    border-radius: 15px;
+    z-index: -1;
+   
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+   
+}
+
+.img-info {
+    position: absolute;
+    /* top: 0%; */
+    left: 0;
+    bottom: 0;
+    height: 0%;
+    width: 100%;
+    background-color: var(--themeColor);
+    text-align: center;
+    border-radius: 2px;
+    color: var(--bodyColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.5s; 
+    opacity: 0;
+}
+
+.img-box:hover .img-info {
+    height: 100%;
+    opacity: 1;
+}
+.img-info h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.img-info div a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--bodyColor);
+    color: #fff;
+    margin-right: 10px;
+}
 
 /* ============================ */
 /* ANIMATION/ KEYFRAMES */
@@ -665,3 +764,13 @@ main {
     }
 }
 
+@media only screen and (max-width: 1200px) {
+    .projects-row {
+        grid-gap: 20px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .projects-row {
+        grid-gap: 30px;
+    }
+}

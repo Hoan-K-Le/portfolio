@@ -9,7 +9,7 @@ menuBtn.addEventListener('click',function(e) {
 // Autotype javascript
 // https://github.com/mattboldt/typed.js/ source
 let typed = new Typed('.auto-input', {
-    strings: ['Full Stack Developer!', 'Freelancer!', 'Anime Enthusiast!', 'Gamer!'],
+    strings: ['Full Stack Developer!', 'Freelancer!', 'Anime Enthusiast!', 'Avid Gamer!'],
     typedSpeed: 50,
     backSpeed: 50,
     backDelay: 2000,

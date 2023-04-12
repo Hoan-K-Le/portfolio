@@ -24,6 +24,7 @@ bodyColor: #222831
     --bgColor: #f7f7f7;
     --shadowColor: #058a76;
     --bodyColor: #222831;
+    --shadow: 10px 10px 30px rgba(0,0,0,0.85);
 }
 
 
@@ -76,7 +77,7 @@ body::-webkit-scrollbar-thumb {
     left: 40%;
     width: 20%;
     height: 2px;
-    background-color: var(--bgColor);
+    background-color: var(--textColor);
     border-radius: 2px;
 }
 
@@ -177,7 +178,9 @@ header nav ul li {
         font-weight: 400;
         font-size: 20px;
         letter-spacing: 0.6px;;
-
+        margin-right: 10px;
+        transition: 0.4s;
+        position: relative;
     }
 
 .lists {
@@ -187,19 +190,29 @@ header nav ul li {
     align-items: center;
 }
 
-header nav ul li a  {
-    margin-right: 10px;
-    font-size: 20px;
-    transition: 0.4s;
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background: var(--themeColor);
+    bottom: -8px;
+    left: 0;
+    transition: 0.3s;
 }
 
-header nav ul li a:hover  {
-    padding: 10px 10px;
-    /* background: var(--themeColor); */
-    border-bottom: 1px solid var(--themeColor);
-    /* border-radius: 10px; */
-    transition: 0.3s ease-in;
+header nav ul li a:hover::after {
+    width: 100%;
 }
+
+/* header nav ul li a:hover  {
+    padding: 10px 10px;
+    background: var(--themeColor);
+    border-bottom: 1px solid var(--themeColor);
+    border-radius: 10px;
+    transition: 0.3s ease-in;
+} */
 
 .header nav ul li .active {
     background: var(--themeColor);
@@ -326,25 +339,6 @@ main {
     border-bottom: 4px solid var(--themeColor)
 }
 
-/* for mobile view */
-@media only screen and (max-width: 670px) {
-    #home {
-        padding: 30px;
-       
-        
-    }
-    #home .home-row h1 {
-        font-size: 45px;
-        letter-spacing: 0;
-        line-height: 50px;
-    }
-    
-    #home .home-row p {
-        color: whitesmoke;
-        font-size: 30px;
-        font-weight: 500;
-    }
-}
 
 /* ============================ */
 /* ABOUT ME */
@@ -365,7 +359,7 @@ main {
     max-width: 600px;
     margin: 0 auto;
     background-color: var(--bodyColor);
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.85);
+    box-shadow: var(--shadow);
     padding: 40px;
     border-radius: 8px;
 }
@@ -402,8 +396,7 @@ main {
 }
 
 .divider li {
-   
-    width: 32%;
+    width: 25%;
     height: 2px;
     background-color: var(--themeColor);
     list-style: none;
@@ -436,6 +429,108 @@ main {
     width: 100%;
 }
 
+/* ============================ */
+/* SKILLS */
+/* ============================ */
+
+#skills {
+    position: relative;
+    background: var(--bodyColor);
+}
+
+#skills h2 {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#skills h2::after {
+    content: '';
+    position: absolute;
+    width: 7%;
+    height: 2px;
+    background-color: var(--themeColor);
+    bottom: -10px;
+    left: 46.5%;
+}
+
+#skills::before {
+    content: '';
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    width: 120px;
+    height: 120px;
+    border: 10px solid var(--themeColor);
+    border-radius: 50%;
+    background-color: var(--shadowColor);
+    animation: CircleMove2 5s infinite;
+}
+
+#skills .skills-col {
+    margin: 0 auto;
+    margin-top: 70px;
+    max-width: 650px;
+   background-color: var(--bodyColor);
+   box-shadow: var(--shadow);
+   padding: 40px;
+   border-radius: 4px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 30px;
+}
+
+.skill-item {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skill-info h4 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 17px;
+    color: #fff;
+}
+
+.outer-line {
+    width: 100%;
+    height: 6px;
+    background: var(--iconBGColor);
+    margin: 7px 0;
+
+}
+
+.inner-line {
+    height: 6px;
+    width: 0%;
+    background-color: var(--themeColor);
+    position: relative;
+    transition: width 2s ease-in-out;
+}
+
+
+.inner-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--themeColor);
+    border-radius: 50%;
+    background-color: var(--bodyColor);
+}
+
+
+
+
+
 
 /* ============================ */
 /* ANIMATION/ KEYFRAMES */
@@ -460,15 +555,29 @@ main {
         right: 2%;
     }
 }
+@keyframes CircleMove2 {
+    0% { 
+        /* transform: translateX(-10%); */
+        left: 18%
+    }
+    50% {
+        /* transform: translateX(-100%); */
+        left: 40%;
+    }
+    100% {
+        /* transform: translateX(-10%); */
+        left: 18%;
+    }
+}
 
 /* making image bounce up and down */
-/* 
-@keyframes imgMove {
+
+/* @keyframes imgMove {
     0% {
         transform: translateY(0%)
     }
     50% {
-        transform: translateY(-10%)
+        transform: translateY(-20%)
     }
     100% {
         transform: translateY(0%)
@@ -478,6 +587,27 @@ main {
 /* ============================ */
 /* MEDIA QUERIES */
 /* ============================ */
+
+/* for mobile view */
+@media only screen and (max-width: 670px) {
+    #home {
+        padding: 30px;
+       
+        
+    }
+    #home .home-row h1 {
+        font-size: 45px;
+        letter-spacing: 0;
+        line-height: 50px;
+    }
+    
+    #home .home-row p {
+        color: whitesmoke;
+        font-size: 30px;
+        font-weight: 500;
+    }
+}
+
 
 @media only screen and (max-width: 1080px) {
     header {
@@ -516,6 +646,9 @@ main {
         left: 35%;
        
     }
+    #about::before, #skills::before {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -527,7 +660,7 @@ main {
     .col {
         width: 100%;;
     }
-    #about::before {
+    #about::before, #skills::before {
         display: none;
     }
 }

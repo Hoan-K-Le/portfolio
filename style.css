@@ -636,7 +636,6 @@ main {
 }
 
 .contact-row {
-    background: pink;
     max-width: 1000px;
     margin: 100px auto;
     display: flex;

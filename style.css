@@ -130,7 +130,7 @@ header .profile .img-social {
     /* background: green; */
     border-radius: 50%;
     /* z-index: -1 */
-    animation: rotate 5s linear infinite;
+    animation: rotate 2s linear infinite;
 }
 
 
@@ -337,6 +337,12 @@ main {
 #home .home-row p span {
     padding-bottom: 15px;
     border-bottom: 4px solid var(--themeColor)
+}
+
+@media only screen and (max-width: 432px) {
+    .tt {
+      font-size: 29px !important;
+    }
 }
 
 
@@ -837,6 +843,10 @@ form input[type='submit'] {
     .col {
         width: 100%;
     }
+}
+
+@media only screen and (max-width: 432px) {
+    
 }
 
 @media only screen and (max-width: 485px) {
